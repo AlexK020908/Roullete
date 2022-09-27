@@ -62,8 +62,10 @@ developmentChains.includes(network.name)
                 let sumOfAllPlayers =
                   redplayersLen + blackplayerslen + greenplayersLen;
                 assert(endingTimeStamp > startingTimeStamp);
-                console.log(`there are ${sumOfAllPlayers} total players`);
-                assert.equal(sumOfAllPlayers, 0);
+                console.log(
+                  `there are ${sumOfAllPlayers.toString()} total players`
+                );
+                assert.equal(sumOfAllPlayers.toString, "0");
                 resolve();
               } catch (error) {
                 //will reject if exceeds time limit
@@ -73,9 +75,15 @@ developmentChains.includes(network.name)
 
             console.log("entering roullete...");
             console.log(`entrance fee: ${entranceFee.toString()}`);
-            const tx = await roullete.enterBlack({ value: entranceFee });
-            console.log("waiting for one block confirmation");
-            await tx.wait(1);
+            roullete
+              .enterRed({ value: entranceFee })
+              .then(async (tx) => {
+                console.log("waiting for one block confirmation");
+                await tx.wait(1);
+              })
+              .catch((err) => {
+                console.error(err);
+              });
           });
         });
       });
