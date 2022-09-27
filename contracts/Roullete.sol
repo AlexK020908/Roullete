@@ -247,15 +247,19 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
     }
 
     function getRedPlayer(uint256 index) public view returns (address) {
-        return s_GreenPlayers[index];
-    }
-
-    function getGreenPlayer(uint256 index) public view returns (address) {
         return s_RedPlayers[index];
     }
 
-    function getRecentWinners() public view returns (address payable[] memory) {
-        return s_recentWinners;
+    function getGreenPlayer(uint256 index) public view returns (address) {
+        return s_GreenPlayers[index];
+    }
+
+    function getRecentWinners(uint256 index) public view returns (address) {
+        return s_recentWinners[index];
+    }
+
+    function amountOfWinners() public view returns (uint256) {
+        return s_recentWinners.length;
     }
 
     function getroulletestate() public view returns (RoulleteState) {
