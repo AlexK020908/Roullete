@@ -29,7 +29,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     subID,
     networkConfig[chainId]["callbackGasLimit"],
   ];
-  const raffle = await deploy("Roullete", {
+  const roullete = await deploy("Roullete", {
     from: deployer,
     args: args,
     log: true,
@@ -37,7 +37,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   });
 
   if (chainId != 31337 && process.env.ETH_API_KEY) {
-    await verify(raffle.address, args);
+    await verify(roullete.address, args);
   }
 
   log("----------------------");

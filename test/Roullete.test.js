@@ -265,7 +265,7 @@ const {
                 console.log(`entrance fee ${entranceFee}`);
                 const two = winnerStartingBalance
                   .add(
-                    entranceFee //multipler
+                    entranceFee.mul(2) //multipler
                   )
                   .toString();
                 console.log(one);

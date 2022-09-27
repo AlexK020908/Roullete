@@ -203,7 +203,7 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
         //a for loop
         for (uint256 i = 0; i < s_recentWinners.length; i++) {
             //make it constatnt winning for now
-            (bool success, ) = s_recentWinners[i].call{value: 0.1 ether}("");
+            (bool success, ) = s_recentWinners[i].call{value: 0.02 ether}("");
             if (!success) {
                 revert Roullete_transferFailed();
             }
@@ -298,4 +298,6 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
     function getInterval() public pure returns (uint256) {
         return c_interval;
     }
+
+    receive() external payable {}
 }

@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/alexk47/folder/hardhatCamp/smartRoullete/contracts/Roullete.sol": {
-      "lastModificationDate": 1664236198135,
-      "contentHash": "f1579bb0a2bacc9b1ce0f00096e5af37",
+      "lastModificationDate": 1664241513125,
+      "contentHash": "8cd8007e26cb3d048c9c96310a0df853",
       "sourceName": "contracts/Roullete.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -52,7 +52,7 @@
       "contentHash": "c153645393332a62a1e73cb0d5a6162c",
       "sourceName": "@chainlink/contracts/src/v0.8/KeeperCompatible.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -97,7 +97,7 @@
       "contentHash": "eb9cc526ef59dfc4d644f56ddca0633a",
       "sourceName": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -139,7 +139,7 @@
       "contentHash": "56ec852a2aeddf81bf5a5720a7fc6a63",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -181,7 +181,7 @@
       "contentHash": "216a5d4c261e07cc7b31f828950e35ad",
       "sourceName": "@chainlink/contracts/src/v0.8/KeeperBase.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -223,7 +223,7 @@
       "contentHash": "bdbf3e274e50272d9c830fa414fcbec9",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -265,7 +265,7 @@
       "contentHash": "0e99ed258a59dc48bc432008b39453cd",
       "sourceName": "@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -311,7 +311,7 @@
       "contentHash": "da5a0c3bd86c896f6a407f909c57edf3",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -353,7 +353,7 @@
       "contentHash": "31f9d56dc35b22576f6a83a671819e71",
       "sourceName": "contracts/test/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.8",
         "settings": {
           "optimizer": {
             "enabled": false,
