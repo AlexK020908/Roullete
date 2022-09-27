@@ -62,10 +62,8 @@ developmentChains.includes(network.name)
                 let sumOfAllPlayers =
                   redplayersLen + blackplayerslen + greenplayersLen;
                 assert(endingTimeStamp > startingTimeStamp);
-                console.log(
-                  `there are ${sumOfAllPlayers.toString()} total players`
-                );
-                assert.equal(sumOfAllPlayers.toString, "0");
+                console.log(`there are ${sumOfAllPlayers} total players`);
+                assert.equal(sumOfAllPlayers, 0);
                 resolve();
               } catch (error) {
                 //will reject if exceeds time limit
