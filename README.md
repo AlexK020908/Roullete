@@ -21,11 +21,12 @@ GOERLI_RPC_URL=h
 ```
 3. register for eth api key, and select a test network you want, for example, I used Goerli. Go to Alchemy and make a new project, it will give you an RPC URL
 
-### deploy to a real test net 
+### deploy to a real test net
+
 You are ready to deploy to a real test net! But before that you need to get some test funds for your wallet, 
 go to the main Faucet: https://faucets.chain.link
-------
-##deploy!
+
+## deploy!
 run `yarn hardhat deploy --network "your network of choice"`
 
 ### register your contract as part of a keeper, and a VRF coordinator 
