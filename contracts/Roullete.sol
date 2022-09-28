@@ -21,6 +21,7 @@ error Roullete_upKeepNotNeeded(
 //we need to make it
 //this implements chianlink v2 and chainlink keepers
 contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
+    uint256 private color = 0;
     enum RoulleteState {
         OPEN, //0
         CALCULATING //1
@@ -47,7 +48,7 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
     event requestedRoulleteResult(uint256 indexed requestId);
     event RoulleteEnter(address indexed player);
     event winnerpicked(address payable[] indexed winner);
-
+    string lastColor = "";
     address payable[] private s_recentWinners;
     RoulleteState private s_roulleteState;
 
@@ -67,6 +68,7 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
         i_callbackgaslimit = callbackGasLimit;
         s_roulleteState = RoulleteState.OPEN;
         s_lastTimeStamp = block.timestamp;
+        color = 3;
     }
 
     function enterRed() public payable {
@@ -190,26 +192,53 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
         Bets winningBet = getWinningBet(chance);
         if (winningBet == Bets.RED) {
             s_recentWinners = s_RedPlayers;
+            color = 2;
         } else if (winningBet == Bets.BLACK) {
             s_recentWinners = s_BlackPlayers;
+            color = 1;
         } else {
             s_recentWinners = s_GreenPlayers;
+            color = 0;
         }
         s_lastTimeStamp = block.timestamp;
+
         s_RedPlayers = new address payable[](0);
         s_BlackPlayers = new address payable[](0);
         s_GreenPlayers = new address payable[](0);
-
+        if (color == 0) {
+            lastColor = "GREEN";
+        } else if (color == 1) {
+            lastColor = "BLACK";
+        } else {
+            lastColor = "RED";
+        }
         //a for loop
-        for (uint256 i = 0; i < s_recentWinners.length; i++) {
-            //make it constatnt winning for now
-            (bool success, ) = s_recentWinners[i].call{value: 0.02 ether}("");
-            if (!success) {
-                revert Roullete_transferFailed();
+        if (s_recentWinners.length == 0) {
+            //no winner
+        } else if (color == 0) {
+            for (uint256 i = 0; i < s_recentWinners.length; i++) {
+                //make it constatnt winning for now
+                (bool success, ) = s_recentWinners[i].call{value: 0.14 ether}(
+                    ""
+                );
+                if (!success) {
+                    revert Roullete_transferFailed();
+                }
+            }
+        } else {
+            for (uint256 i = 0; i < s_recentWinners.length; i++) {
+                //make it constatnt winning for now
+                (bool success, ) = s_recentWinners[i].call{value: 0.02 ether}(
+                    ""
+                );
+                if (!success) {
+                    revert Roullete_transferFailed();
+                }
             }
         }
         emit winnerpicked(s_recentWinners);
         s_roulleteState = RoulleteState.OPEN;
+        color = 3;
     }
 
     function getWinningBet(uint256 chance) public pure returns (Bets) {
@@ -297,6 +326,10 @@ contract Roullete is VRFConsumerBaseV2, KeeperCompatibleInterface {
 
     function getInterval() public pure returns (uint256) {
         return c_interval;
+    }
+
+    function getLatestColor() public view returns (string memory) {
+        return lastColor;
     }
 
     receive() external payable {}

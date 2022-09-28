@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/alexk47/folder/hardhatCamp/smartRoullete/contracts/Roullete.sol": {
-      "lastModificationDate": 1664241513125,
-      "contentHash": "8cd8007e26cb3d048c9c96310a0df853",
+      "lastModificationDate": 1664338411188,
+      "contentHash": "89f176278ea5978ca8ad22d4b3aa80e9",
       "sourceName": "contracts/Roullete.sol",
       "solcConfig": {
         "version": "0.8.8",
