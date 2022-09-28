@@ -37,9 +37,9 @@ run `yarn hardhat deploy --network "your network of choice"`
 
 
 
+feel free to look at the deployed roullete smart contract
 
-
-
+https://goerli.etherscan.io/address/0xF6078fc4684cdCB25f673DA9fD1F25B765aa800d
 
 
 
