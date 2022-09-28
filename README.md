@@ -1,7 +1,7 @@
 # Roullete
 ## Set up for the project
 1. load up the backend project using git 
-2. load up the fron end project using git (called roullete front end in my repo)
+2. load up the front end project using git (called roullete front end in my repo)
 3. cd into back end and run `yarn install`
 4. cd into back end and run `yarn install`, then run `yarn run dev` to load up the front end 
 ### how to set up networks and wallets
